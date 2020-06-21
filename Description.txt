@@ -1,5 +1,0 @@
-# Blood Donation App
-
-This is used to find patients 
-
-## Family members or other relatives...
