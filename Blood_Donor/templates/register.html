@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% block heading %}<h3 style="text-align: center;">{% block title %}Register{% endblock %}</h3>{% endblock %}
+
+
+<div class="container-fluid" style="width: 30%;background-color: #008b8bc2;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 50px;">
+	<form action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
+
+		<div class="form-check">
+		  {{ form.email.label }}
+		  {{ form.email(size=35) }}
+		  {% for error in form.email.errors %}
+		  	<span class="error-message">{{error}}</span>
+		  {% endfor %}
+		</div>
+
+		<div class="form-check">
+		  {{ form.name.label }}
+		  {{ form.name(size=35) }}
+		  {% for error in form.name.errors %}
+		  	<span class="error-message">{{error}}</span>
+		  {% endfor %}
+		</div>
+
+		<div class="form-check">
+		  {{ form.password.label }}
+		  {{ form.password(size=35) }}
+		  {% for error in form.password.errors %}
+		  	<span class="error-message">{{error}}</span>
+		  {% endfor %}
+		</div>
+
+		<div class="form-check">
+		  {{ form.confirm_password.label }}
+		  {{ form.confirm_password(size=35) }}
+		  {% for error in form.confirm_password.errors %}
+		  	<span class="error-message">{{error}}</span>
+		  {% endfor %}
+		</div>
+		
+		<div>
+			{{ form.submit() }}
+		</div>
+	</form>
+</div>
+
+{% endblock %}
